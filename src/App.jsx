@@ -16,3 +16,5 @@ export default App;
 // passing function as props
 // passing jsx as props
 // passing component as props
+// props drilling
+// component composition
