@@ -1,11 +1,9 @@
-import StyledDiv from "./StyledDiv";
+import Users from "./components/Users";
 
 function App() {
   return (
     <>
-      <StyledDiv title="mama sardar hatawa">
-        <h1>Sardar react developer</h1>
-      </StyledDiv>
+      <Users />
     </>
   );
 }
@@ -18,3 +16,4 @@ export default App;
 // passing component as props
 // props drilling
 // component composition
+// life cycles in react and useEffect
