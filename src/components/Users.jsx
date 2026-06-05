@@ -6,13 +6,17 @@ function Users() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/users");
-        const json = await res.json();
-        setUsers(json);
-      } catch (error) {
-        setError(true);
-      }
+      // try {
+      //   const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      //   const json = await res.json();
+      //   setUsers(json);
+      // } catch (error) {
+      //   setError(true);
+      // }
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => setUsers(json))
+        .catch((error) => setError(true));
     };
     fetchData();
   }, []);
