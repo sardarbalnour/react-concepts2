@@ -8,9 +8,10 @@ function Users() {
       .then((res) => res.json())
       .then((json) => setUsers(json));
   }, []);
-  
+
   return (
     <div>
+      {!users.length && <h3>Loading...</h3>}
       <ul>
         {users.map((user) => (
           <li key={user.id}>{user.name}</li>
