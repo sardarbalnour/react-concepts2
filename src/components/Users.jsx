@@ -7,40 +7,46 @@ function Users() {
   const [id, setId] = useState("");
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://jsonplaceholder.typicode.com/users/`);
+        const res = await fetch(
+          `https://jsonplaceholder.typicode.com/photos/${id}`,
+          { signal: controller.signal }
+        );
         const json = await res.json();
         setUsers(json);
+        console.log(json);
       } catch (error) {
-        setError(true);
+        if (error.name !== "AbortError") {
+          setError(true);
+        }
       }
     };
     fetchData();
-  }, []);
 
-  const searchHandler = async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-    const json = await res.json();
-    console.log(json);
-  };
+    return () => {
+      controller.abort();
+      console.log("ggf");
+    };
+  }, [id]);
 
   return (
     <div>
-      {id > 10 && <Counter />}
+      {/* {id > 10 && <Counter />} */}
       <input
         type="text"
         placeholder="Id"
         value={id}
         onChange={(e) => setId(e.target.value)}
       />
-      <button onClick={searchHandler}>search</button>
       {!users.length && !error && <h3>Loading...</h3>}
-      <ul>
+      {/* <ul>
         {users.map((user) => (
           <li key={user.id}>{user.name}</li>
         ))}
-      </ul>
+      </ul> */}
       {error && <h4>Something went wrong !</h4>}
     </div>
   );
