@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Counter from "./Counter";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -26,6 +27,7 @@ function Users() {
 
   return (
     <div>
+      {id > 10 && <Counter />}
       <input
         type="text"
         placeholder="Id"
