@@ -8,18 +8,21 @@ function Users() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `https://jsonplaceholder.typicode.com/users/${id}`
-        );
+        const res = await fetch(`https://jsonplaceholder.typicode.com/users/`);
         const json = await res.json();
         setUsers(json);
-        console.log(json)
       } catch (error) {
         setError(true);
       }
     };
     fetchData();
-  }, [id]);
+  }, []);
+
+  const searchHandler = async () => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const json = await res.json();
+    console.log(json);
+  };
 
   return (
     <div>
@@ -29,12 +32,13 @@ function Users() {
         value={id}
         onChange={(e) => setId(e.target.value)}
       />
+      <button onClick={searchHandler}>search</button>
       {!users.length && !error && <h3>Loading...</h3>}
-      {/* <ul>
+      <ul>
         {users.map((user) => (
           <li key={user.id}>{user.name}</li>
         ))}
-      </ul> */}
+      </ul>
       {error && <h4>Something went wrong !</h4>}
     </div>
   );
