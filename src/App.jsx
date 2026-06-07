@@ -17,3 +17,7 @@ export default App;
 // props drilling
 // component composition
 // life cycles in react and useEffect
+// react strict mode
+// how react works
+// state scheduling
+// state batching
