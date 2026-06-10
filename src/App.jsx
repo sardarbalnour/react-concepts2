@@ -21,3 +21,4 @@ export default App;
 // how react works
 // state scheduling
 // state batching
+// Review
