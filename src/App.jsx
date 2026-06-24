@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import HttpReq from "./HttpReq";
 
 const initialState = { count: 0, number: 26 };
 
@@ -42,14 +43,15 @@ function App() {
 
   return (
     <>
-      <h1>useReducer hook </h1>
+      <HttpReq />
+      {/* <h1>useReducer hook </h1>
       <p>{state.count}</p>
       <button onClick={increaseHandler}>increase</button>
       <button onClick={increaseByAmountHandler}>increase by amount</button>
       <button onClick={resetHandler}>reset</button>
       <button onClick={decreaseHandler}>decrease</button>
       <p>{state.number}</p>
-      <button onClick={() => dispatch({ type: "UP" })}>UP number</button>
+      <button onClick={() => dispatch({ type: "UP" })}>UP number</button> */}
     </>
   );
 }
