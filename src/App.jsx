@@ -3,9 +3,11 @@ import { useReducer } from "react";
 const reducer = (state, action) => {
   console.log(state, action);
 
-  switch (action) {
+  switch (action.type) {
     case "Increase":
       return state + 1;
+    case "IncreaseByAmount":
+      return state + action.payload;
     case "Decrease":
       return state - 1;
     case "Reset":
@@ -19,26 +21,27 @@ function App() {
   const [count, dispatch] = useReducer(reducer, 0);
 
   const increaseHandler = () => {
-    // setCount((count) => count + 1);
-    dispatch("Increase");
+    dispatch({ type: "Increase" });
+  };
+
+  const increaseByAmountHandler = () => {
+    dispatch({ type: "IncreaseByAmount", payload: 10 });
   };
 
   const decreaseHandler = () => {
-    // if (count < 1) return;
-    // setCount((count) => count - 1);
-    dispatch("Decrease");
+    dispatch({ type: "Decrease" });
   };
 
   const resetHandler = () => {
-    // setCount(0);
-    dispatch("Reset");
+    dispatch({ type: "Reset" });
   };
 
   return (
     <>
-      <h1>useReduce hook </h1>
+      <h1>useReducer hook </h1>
       <p>{count}</p>
       <button onClick={increaseHandler}>increase</button>
+      <button onClick={increaseByAmountHandler}>increase by amount</button>
       <button onClick={resetHandler}>reset</button>
       <button onClick={decreaseHandler}>decrease</button>
     </>
