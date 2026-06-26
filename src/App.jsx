@@ -12,9 +12,9 @@ const UserContext = createContext();
 
 function App() {
   return (
-    <>
+    <UserContext.Provider value={users}>
       <UserPage />
-    </>
+    </UserContext.Provider>
   );
 }
 
