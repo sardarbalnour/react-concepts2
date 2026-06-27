@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { UserContext } from "../App";
+
+import { UserContext } from "../context/UserProvider";
 
 function UserList() {
   const { users } = useContext(UserContext);

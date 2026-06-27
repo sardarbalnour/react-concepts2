@@ -1,20 +1,11 @@
-import { createContext, useState } from "react";
-
 import UserPage from "./components/UserPage";
-
-export const UserContext = createContext();
+import UserProvider from "./context/UserProvider";
 
 function App() {
-  const [users, setUsers] = useState([
-    { id: 1, name: "sardar" },
-    { id: 2, name: "ali" },
-    { id: 3, name: "hama" },
-  ]);
-
   return (
-    <UserContext.Provider value={{ users, setUsers }}>
+    <UserProvider>
       <UserPage />
-    </UserContext.Provider>
+    </UserProvider>
   );
 }
 
