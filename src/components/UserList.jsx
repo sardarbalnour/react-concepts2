@@ -2,12 +2,11 @@ import { useContext } from "react";
 import { UserContext } from "../App";
 
 function UserList() {
-  const result = useContext(UserContext);
-  console.log(result);
+  const { users } = useContext(UserContext);
 
   return (
     <div>
-      {result.map((user) => (
+      {users.map((user) => (
         <p key={user.id}>{user.name}</p>
       ))}
     </div>
