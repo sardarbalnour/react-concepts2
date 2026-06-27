@@ -8,7 +8,7 @@ const users = [
   { id: 3, name: "hama" },
 ];
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 function App() {
   return (
