@@ -1,7 +1,10 @@
+import { Link } from "react-router"
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+        <Link to="/courses">Courses</Link>
+    </div>
   )
 }
 
