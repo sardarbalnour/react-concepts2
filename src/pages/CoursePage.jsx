@@ -1,8 +1,12 @@
+import NavBar from "../components/NavBar";
 
 function CoursePage() {
   return (
-    <div>CoursePage</div>
-  )
+    <div>
+      <NavBar />
+      <h1>Courses</h1>
+    </div>
+  );
 }
 
-export default CoursePage
+export default CoursePage;

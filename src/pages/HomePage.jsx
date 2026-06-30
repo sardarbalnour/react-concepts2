@@ -1,11 +1,12 @@
-import { Link } from "react-router"
+import NavBar from "../components/NavBar";
 
 function HomePage() {
   return (
     <div>
-        <Link to="/courses">Courses</Link>
+      <NavBar />
+      <h1>Home</h1>
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

@@ -1,8 +1,12 @@
+import NavBar from "../components/NavBar";
 
 function AboutUsPage() {
   return (
-    <div>AboutUsPage</div>
-  )
+    <div>
+      <NavBar />
+      <h1>About Us</h1>
+    </div>
+  );
 }
 
-export default AboutUsPage
+export default AboutUsPage;
