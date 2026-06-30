@@ -1,18 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 
 import HomePage from "./pages/HomePage";
 import CoursePage from "./pages/CoursePage";
 import AboutUsPage from "./pages/AboutUsPage";
+import PageNotFound from "./pages/404";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="courses" element={<CoursePage />} />
-        <Route path="about-us" element={<AboutUsPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="courses" element={<CoursePage />} />
+      <Route path="about-us" element={<AboutUsPage />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
 }
 
