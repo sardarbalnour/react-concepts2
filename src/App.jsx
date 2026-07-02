@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 
 import HomePage from "./pages/HomePage";
 import CoursePage from "./pages/CoursePage";
@@ -11,6 +11,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/landing" element={<Navigate to="/" replace/>} />
       <Route path="courses" element={<CoursePage />} />
       <Route path="about-us" element={<AboutUsPage />} />
       <Route path="products" element={<ProductsPage />} />
